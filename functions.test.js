@@ -1,4 +1,9 @@
-import { lengthFunction, pushFunction, someFunction } from "./index.js";
+import {
+  lengthFunction,
+  pushFunction,
+  someFunction,
+  popFunction,
+} from "./functions.js";
 
 describe("Given a lenghtFunction function", () => {
   describe("When it receives [2, 4]", () => {
@@ -101,6 +106,30 @@ describe("Given a someFunction function", () => {
       const expectedValue = someFunction(coders, parameter);
 
       expect(expectedValue).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given a popFunction function", () => {
+  describe("When it receives ['David', 'Bisbal', 'Máquina']", () => {
+    test("Then it should return 'Máquina'", () => {
+      const initalList = ["David", "Bisbal", "Máquina"];
+
+      const expectedOutput = "Máquina";
+      const checkPopFunction = popFunction(initalList);
+
+      expect(checkPopFunction).toBe(expectedOutput);
+    });
+  });
+
+  describe("When it receives []", () => {
+    test("Then it should return undefinied", () => {
+      const initialList = [];
+
+      const expectedOutput = undefined;
+      const checkPopFunction = popFunction(initialList);
+
+      expect(checkPopFunction).toBe(expectedOutput);
     });
   });
 });
