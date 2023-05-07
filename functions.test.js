@@ -4,6 +4,7 @@ import {
   someFunction,
   popFunction,
   shiftFunction,
+  unshiftFunction,
 } from "./functions.js";
 
 describe("Given a lenghtFunction function", () => {
@@ -155,6 +156,32 @@ describe("Given a shiftFunction function", () => {
       const checkShiftFunction = shiftFunction(initialList);
 
       expect(checkShiftFunction).toBe(expectedOutput);
+    });
+  });
+});
+
+describe("Given a unshiftFunction function", () => {
+  describe("When it receives [1, 44, 0] and ['tengo', 'hambre']", () => {
+    test("Then it should return 5", () => {
+      const firstList = [1, 44, 0];
+      const secondList = ["tengo", "hambre"];
+
+      const expectedOutput = 5;
+      const checkUnshiftFunction = unshiftFunction(firstList, ...secondList);
+
+      expect(checkUnshiftFunction).toBe(expectedOutput);
+    });
+  });
+
+  describe("When it receives ['voy', 'a', 'comer'] and []", () => {
+    test("Then it should return 3", () => {
+      const firstList = ["voy", "a", "comer"];
+      const secondList = [];
+
+      const expectedOutput = 3;
+      const checkUnshiftFunction = unshiftFunction(firstList, ...secondList);
+
+      expect(checkUnshiftFunction).toBe(expectedOutput);
     });
   });
 });

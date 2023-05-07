@@ -53,3 +53,8 @@ export const shiftFunction = (coderArray) => {
     return firstItemInArray;
   }
 };
+
+export const unshiftFunction = (coderArray, ...newItem) => {
+  const finalTotalArray = [...newItem, ...coderArray];
+  return finalTotalArray.length;
+};
