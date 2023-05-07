@@ -28,12 +28,28 @@ export const someFunction = (coderArray, parameter) => {
 };
 
 export const popFunction = (coderArray) => {
-  const lastCoderInArray = coderArray[coderArray.length - 1];
+  const lastItemInArray = coderArray[coderArray.length - 1];
   if (coderArray.length === 0) {
     return undefined;
   }
 
   if (coderArray.length > 0) {
-    return lastCoderInArray;
+    return lastItemInArray;
+  }
+};
+
+export const shiftFunction = (coderArray) => {
+  if (coderArray.length === 0) {
+    return undefined;
+  }
+
+  if (coderArray.length > 0) {
+    const firstItemInArray = coderArray[0];
+    for (let i = 0; i < coderArray.length; i++) {
+      coderArray[i - 1] = coderArray[i];
+    }
+
+    popFunction(coderArray);
+    return firstItemInArray;
   }
 };

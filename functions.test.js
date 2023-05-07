@@ -3,6 +3,7 @@ import {
   pushFunction,
   someFunction,
   popFunction,
+  shiftFunction,
 } from "./functions.js";
 
 describe("Given a lenghtFunction function", () => {
@@ -130,6 +131,30 @@ describe("Given a popFunction function", () => {
       const checkPopFunction = popFunction(initialList);
 
       expect(checkPopFunction).toBe(expectedOutput);
+    });
+  });
+});
+
+describe("Given a shiftFunction function", () => {
+  describe("When it receives [1, 5, 7, 9]", () => {
+    test("Then it should return 1", () => {
+      const initialList = [1, 5, 7, 9];
+
+      const expectedOutput = 1;
+      const checkShiftFunction = shiftFunction(initialList);
+
+      expect(checkShiftFunction).toBe(expectedOutput);
+    });
+  });
+
+  describe("When it receives []", () => {
+    test("Then it should return undefined", () => {
+      const initialList = [];
+
+      const expectedOutput = undefined;
+      const checkShiftFunction = shiftFunction(initialList);
+
+      expect(checkShiftFunction).toBe(expectedOutput);
     });
   });
 });
